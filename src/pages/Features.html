@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-marks System Features</title>
+    <link rel="stylesheet" href="../css/output.css" />
+  </head>
+
+  <body class="m-0 min-h-screen w-full">
+    <!-- Navigation -->
+    <div
+      class="w-full px-4 md:px-10 bg-red-400 text-stone-100 flex justify-between items-center h-16"
+    >
+      <div class="flex items-center gap-x-3">
+        <div class="h-10 w-10 text-black">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-full"
+            viewBox="0 0 24 24"
+            role="img"
+            aria-label="Graduation Cap"
+          >
+            <title>Graduation Cap</title>
+            <path
+              fill="currentColor"
+              d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm4 12.27l-4 2.18-4-2.18V14l4 2.18L16 14v1.27z"
+            />
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-bold text-2xl tracking-tighter">King College</h1>
+          <p class="text-xs -mt-1 opacity-80">SINCE 1890</p>
+        </div>
+      </div>
+
+      <div
+        class="hidden lg:flex font-bold items-center gap-x-10 tracking-tight"
+      >
+        <a
+          href="Home.html"
+          class="hover:underline hover:decoration-red-400 hover:decoration-2"
+          >Home</a
+        >
+        <a
+          href="Academics.html"
+          class="underline decoration-red-400 decoration-2"
+          >E-marks System</a
+        >
+        <a
+          href="login.html"
+          class="hover:underline hover:decoration-red-400 hover:decoration-2"
+          >Portal Login</a
+        >
+      </div>
+
+      <button class="lg:hidden text-2xl">&#9776;</button>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="flex flex-col md:items-center py-24 max-md:px-6 gap-y-10">
+      <div>
+        <h1 class="text-5xl text-black font-serif tracking-tighter">
+          E-marks System
+        </h1>
+      </div>
+
+      <div class="md:w-1/2">
+        <h1 class="text-xl font-sans font-extralight md:text-center">
+          A comprehensive platform for managing student results, calculating
+          grades automatically, and tracking academic performance with precision
+          and ease.
+        </h1>
+      </div>
+
+      <!-- Statistics -->
+      <div
+        class="flex md:justify-between max-md:gap-x-10 max-sm:gap-x-5 md:gap-x-10 md:w-1/2 pt-16"
+      >
+        <div class="flex flex-col md:items-center">
+          <h1
+            class="text-7xl max-sm:text-5xl font-semibold font-serif tracking-tighter text-red-400"
+          >
+            5
+          </h1>
+          <h1 class="font-semibold font-sans tracking-tighter text-center">
+            Core Subjects
+          </h1>
+        </div>
+        <div class="flex flex-col md:items-center">
+          <h1
+            class="text-7xl max-sm:text-5xl font-semibold font-serif tracking-tighter text-red-400"
+          >
+            100%
+          </h1>
+          <h1 class="font-semibold font-sans tracking-tighter text-center">
+            Automated
+          </h1>
+        </div>
+        <div class="flex flex-col md:items-center">
+          <h1
+            class="text-7xl max-sm:text-5xl font-semibold font-serif tracking-tighter text-red-400"
+          >
+            A-F
+          </h1>
+          <h1 class="font-semibold font-sans tracking-tighter text-center">
+            Grade Scale
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo Video Section -->
+    <div class="w-full md:px-20 grid grid-cols-1 grid-rows-1">
+      <img src="../images/image12.jpg" class="w-full row-start-1 col-start-1" />
+      <div class="w-full h-full row-start-1 col-start-1 bg-black/30"></div>
+      <div
+        class="w-full h-full row-start-1 col-start-1 flex items-center justify-center"
+      >
+        <a
+          href="login.html"
+          class="w-20 h-20 rounded-full bg-red-400 hover:bg-red-500 flex items-center justify-center transition-all duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white ml-1"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Feature Sections -->
+    <div class="container py-20 px-4 sm:px-6 lg:px-20 space-y-20">
+      <!-- Grade Management -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12"
+      >
+        <div class="order-1 md:order-1">
+          <img
+            src="../images/image6.jpg"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+            alt="Grade management dashboard"
+            loading="lazy"
+            class="w-full h-52 sm:h-64 md:h-80 lg:h-[60vh] object-cover shadow-sm"
+          />
+        </div>
+
+        <div
+          class="order-2 md:order-2 bg-white p-6 sm:p-8 md:p-12 lg:p-16 shadow-md transform md:-translate-x-6 lg:-translate-x-12"
+        >
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif mb-3">
+            Grade Management
+          </h2>
+          <div class="w-16 md:w-28 h-0.5 bg-red-400 mb-6 mx-auto md:mx-0"></div>
+          <p
+            class="text-gray-700 mb-6 text-base sm:text-lg md:text-base lg:text-lg leading-relaxed"
+          >
+            Effortlessly manage student grades across multiple subjects. Our
+            system automatically calculates totals and averages, assigns grades
+            based on performance, and generates comprehensive reports with
+            visual progress indicators.
+          </p>
+
+          <div class="flex justify-center md:justify-start">
+            <a
+              href="login.html"
+              class="inline-flex items-center justify-center bg-red-400 hover:bg-red-500 text-white font-semibold px-6 py-3 w-full sm:w-auto text-center md:text-left transition"
+            >
+              Access Portal <span class="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance Analytics -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12"
+      >
+        <div
+          class="order-2 md:order-1 bg-white p-6 sm:p-8 md:p-12 shadow-md transform md:translate-x-0 lg:-translate-x-12"
+        >
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif mb-3">
+            Performance Analytics
+          </h2>
+          <div class="w-16 md:w-28 h-0.5 bg-red-400 mb-6 mx-auto md:mx-0"></div>
+          <p
+            class="text-gray-700 mb-6 text-base sm:text-lg md:text-base lg:text-lg leading-relaxed"
+          >
+            Track student performance over time with detailed analytics. Monitor
+            class averages, identify top performers, calculate pass rates, and
+            gain insights into academic trends to support data-driven decisions.
+          </p>
+
+          <div class="flex justify-center md:justify-start">
+            <a
+              href="login.html"
+              class="inline-flex items-center justify-center bg-red-400 hover:bg-red-500 text-white font-semibold px-6 py-3 w-full sm:w-auto transition"
+            >
+              View Dashboard <span class="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="order-1 md:order-2">
+          <img
+            src="../images/image10.jpg"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+            alt="Performance analytics"
+            loading="lazy"
+            class="w-full h-52 sm:h-64 md:h-80 lg:h-[60vh] object-cover shadow-sm"
+          />
+        </div>
+      </section>
+
+      <!-- Search & Sort -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12"
+      >
+        <div class="order-1 md:order-1">
+          <img
+            src="../images/image4.jpg"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+            alt="Search and sort functionality"
+            loading="lazy"
+            class="w-full h-52 sm:h-64 md:h-80 lg:h-[60vh] object-cover shadow-sm"
+          />
+        </div>
+
+        <div
+          class="order-2 md:order-2 bg-white p-6 sm:p-8 md:p-12 lg:p-16 shadow-md transform md:-translate-x-6 lg:-translate-x-12"
+        >
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif mb-3">
+            Search & Sort
+          </h2>
+          <div class="w-16 md:w-28 h-0.5 bg-red-400 mb-6 mx-auto md:mx-0"></div>
+          <p
+            class="text-gray-700 mb-6 text-base sm:text-lg md:text-base lg:text-lg leading-relaxed"
+          >
+            Quickly find student records with powerful search functionality.
+            Sort results by name, average score, or total marks. Filter and
+            organize data efficiently to streamline your workflow.
+          </p>
+
+          <div class="flex justify-center md:justify-start">
+            <a
+              href="login.html"
+              class="inline-flex items-center justify-center bg-red-400 hover:bg-red-500 text-white font-semibold px-6 py-3 w-full sm:w-auto transition"
+            >
+              Try Features <span class="ml-2">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- System Benefits -->
+    <div class="grid md:grid-cols-2 py-10 gap-y-5 md:px-20 gap-x-10">
+      <div class="flex items-start p-10 gap-x-6 bg-slate-200">
+        <div class="h-16 w-16 text-red-400">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-full"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+
+        <div class="flex flex-col gap-y-5">
+          <h1 class="text-2xl font-serif">Automated Calculations</h1>
+          <h1 class="text-slate-500 font-serif tracking-tight font-light">
+            Eliminate manual calculation errors with our automated grading
+            system. Instantly compute totals, averages, and assign letter
+            grades.
+          </h1>
+          <a
+            href="login.html"
+            class="px-4 py-3 font-serif text-left w-40 bg-red-400 hover:bg-red-500 text-white"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <div class="flex items-start p-10 gap-x-6 bg-slate-200">
+        <div class="h-16 w-16 text-red-400">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-full"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </div>
+
+        <div class="flex flex-col gap-y-5">
+          <h1 class="text-2xl font-serif">Visual Progress Tracking</h1>
+          <h1 class="text-slate-500 font-serif tracking-tight font-light">
+            Monitor student progress with intuitive visual indicators. Progress
+            bars and color-coded grades make performance tracking effortless.
+          </h1>
+          <a
+            href="login.html"
+            class="px-4 py-3 font-serif text-left w-40 bg-red-400 hover:bg-red-500 text-white"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grading Scale -->
+    <div class="bg-white py-20 px-4 md:px-20">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-4">Grading Scale</h2>
+        <p class="text-center text-gray-600 mb-12">
+          Our standardized grading system ensures consistent evaluation
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div
+            class="bg-green-50 border-2 border-green-600 p-6 text-center rounded-lg"
+          >
+            <h3 class="text-4xl font-bold text-green-600 mb-2">A</h3>
+            <p class="font-semibold text-green-700">90 - 100</p>
+            <p class="text-sm text-gray-600 mt-2">Excellent</p>
+          </div>
+
+          <div
+            class="bg-blue-50 border-2 border-blue-600 p-6 text-center rounded-lg"
+          >
+            <h3 class="text-4xl font-bold text-blue-600 mb-2">B</h3>
+            <p class="font-semibold text-blue-700">80 - 89</p>
+            <p class="text-sm text-gray-600 mt-2">Very Good</p>
+          </div>
+
+          <div
+            class="bg-yellow-50 border-2 border-yellow-600 p-6 text-center rounded-lg"
+          >
+            <h3 class="text-4xl font-bold text-yellow-600 mb-2">C</h3>
+            <p class="font-semibold text-yellow-700">70 - 79</p>
+            <p class="text-sm text-gray-600 mt-2">Good</p>
+          </div>
+
+          <div
+            class="bg-orange-50 border-2 border-orange-600 p-6 text-center rounded-lg"
+          >
+            <h3 class="text-4xl font-bold text-orange-600 mb-2">D</h3>
+            <p class="font-semibold text-orange-700">60 - 69</p>
+            <p class="text-sm text-gray-600 mt-2">Satisfactory</p>
+          </div>
+
+          <div
+            class="bg-red-50 border-2 border-red-600 p-6 text-center rounded-lg"
+          >
+            <h3 class="text-4xl font-bold text-red-600 mb-2">F</h3>
+            <p class="font-semibold text-red-700">0 - 59</p>
+            <p class="text-sm text-gray-600 mt-2">Fail</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div
+      class="bg-red-400 px-10 md:px-20 py-16 flex gap-y-5 flex-col md:items-center"
+    >
+      <h1 class="text-4xl font-serif text-white">
+        Start Managing Results Today!
+      </h1>
+      <h1 class="text-white">
+        Experience the power of automated grade management
+      </h1>
+      <div class="flex justify-center md:justify-start">
+        <a
+          href="login.html"
+          class="inline-flex items-center justify-center bg-slate-900 hover:bg-white hover:text-red-400 text-white font-semibold px-6 py-3 w-full sm:w-auto text-center md:text-left transition"
+        >
+          Access E-marks Portal <span class="ml-2">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Technical Features -->
+    <div
+      class="flex flex-col md:items-center py-24 max-md:px-6 gap-y-10 bg-white"
+    >
+      <div>
+        <h1 class="text-5xl text-black font-serif tracking-tighter">
+          Technical Features
+        </h1>
+      </div>
+
+      <div class="md:w-2/3">
+        <h1 class="text-xl font-sans font-extralight md:text-center">
+          Built with modern technology for reliability and performance
+        </h1>
+      </div>
+
+      <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-y-10 md:gap-16 pt-8">
+        <div class="flex gap-x-10 md:items-start">
+          <div class="w-14 text-red-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-full h-full"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+            </svg>
+          </div>
+
+          <div class="flex flex-col gap-y-3">
+            <h1 class="text-3xl font-serif tracking-tighter">
+              Input Validation
+            </h1>
+            <h1 class="text-slate-600 tracking-tighter">
+              Built-in validation ensures marks are within 0-100 range with
+              real-time error feedback
+            </h1>
+          </div>
+        </div>
+
+        <div class="flex gap-x-10 md:items-start">
+          <div class="w-14 text-red-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-full h-full"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+              ></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+
+          <div class="flex flex-col gap-y-3">
+            <h1 class="text-3xl font-serif tracking-tighter">
+              Data Persistence
+            </h1>
+            <h1 class="text-slate-600 tracking-tighter">
+              Local storage ensures your data is saved and accessible across
+              sessions
+            </h1>
+          </div>
+        </div>
+
+        <div class="flex gap-x-10 md:items-start">
+          <div class="w-14 text-red-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-full h-full"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+
+          <div class="flex flex-col gap-y-3">
+            <h1 class="text-3xl font-serif tracking-tighter">
+              Real-time Updates
+            </h1>
+            <h1 class="text-slate-600 tracking-tighter">
+              Dynamic interface updates instantly as you add, edit, or delete
+              records
+            </h1>
+          </div>
+        </div>
+
+        <div class="flex gap-x-10 md:items-start">
+          <div class="w-14 text-red-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-full h-full"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+
+          <div class="flex flex-col gap-y-3">
+            <h1 class="text-3xl font-serif tracking-tighter">
+              Fast Performance
+            </h1>
+            <h1 class="text-slate-600 tracking-tighter">
+              Optimized code ensures quick loading and smooth interactions
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-image3 bg-cover">
+      <div
+        class="w-full h-full flex gap-x-60 flex-col-reverse gap-y-20 lg:flex-row bg-zinc-900/95 py-6 px-3 md:py-20 md:px-10"
+      >
+        <div class="flex flex-col gap-y-20 text-zinc-300">
+          <div class="logo flex flex-col-reverse h-full gap-x-3">
+            <div class="header">
+              <h1 class="font-bold text-4xl tracking-tighter">King College</h1>
+            </div>
+            <div
+              class="h-[6vw] w-[6vw] max-md:h-[20vw] max-md:w-[20vw] text-red-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-full h-full"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-label="Graduation Cap"
+              >
+                <title>Graduation Cap</title>
+                <path
+                  fill="currentColor"
+                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm4 12.27l-4 2.18-4-2.18V14l4 2.18L16 14v1.27z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div>
+            <h1>© 2021 King College. All Rights Reserved</h1>
+          </div>
+        </div>
+
+        <div class="flex max-sm:flex-col gap-y-10 gap-x-20">
+          <div>
+            <h1 class="text-zinc-200 font-semibold tracking-tighter text-xl">
+              Get in touch
+            </h1>
+            <a
+              href="https://wa.me/0798019397"
+              class="text-white font-bold text-2xl"
+              target="_blank"
+              >0798019397</a
+            >
+          </div>
+
+          <div class="flex flex-col gap-y-4">
+            <h1 class="text-zinc-200 font-semibold tracking-tighter text-xl">
+              Quick Links
+            </h1>
+            <a
+              href="Home.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >Home</a
+            >
+            <a
+              href="Features.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >E-marks System</a
+            >
+            <a
+              href="login.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >Portal Login</a
+            >
+          </div>
+
+          <div class="flex flex-col gap-y-4 sm:pl-10">
+            <h1 class="text-zinc-200 font-semibold tracking-tighter text-xl">
+              System
+            </h1>
+            <a
+              href="Features.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >Features</a
+            >
+            <a class="text-zinc-400 hover:text-white duration-300"
+              >Grade Management</a
+            >
+            <a class="text-zinc-400 hover:text-white duration-300">Analytics</a>
+            <a
+              href="login.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >Access Portal</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

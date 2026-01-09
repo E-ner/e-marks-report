@@ -1,27 +1,44 @@
-lucide.createIcons();
+// index.js - Sidebar and general navigation scripts
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Sidebar toggle functionality
+  const sidebarToggle = document.getElementById("sidebar-toggle");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebar-overlay");
 
-const sideBarToggler = document.querySelector("#sidebar-toggle");
-const sideBarOverlay = document.querySelector("#sidebar-overlay");
-const sidebar = document.querySelector('#sidebar');
+  if (sidebarToggle && sidebar && overlay) {
+    // Toggle sidebar
+    sidebarToggle.addEventListener("click", function () {
+      sidebar.classList.toggle("-translate-x-full");
+      overlay.classList.toggle("hidden");
+    });
 
-function toggleSidebar(isOpen) {
-    if (isOpen) {
-        sidebar.classList.remove('-translate-x-full');
-        sideBarOverlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    } else {
-        sidebar.classList.add('-translate-x-full');
-        sideBarOverlay.classList.add('hidden');
-        document.body.style.overflow = '';
-    }
-}
+    // Close sidebar when clicking overlay
+    overlay.addEventListener("click", function () {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    });
 
-sideBarToggler.addEventListener('click', () => toggleSidebar(true));
-sideBarOverlay.addEventListener('click', () => toggleSidebar(false));
+    // Close sidebar on escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      }
+    });
+  }
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1024) { 
-        toggleSidebar(false); 
-    }
+  // Initialize Lucide icons
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
 });
+
+// Logout function
+function logout() {
+  if (confirm("Are you sure you want to logout?")) {
+    // Clear any session data if needed
+    // localStorage.removeItem('userSession');
+    window.location.href = "login.html";
+  }
+}

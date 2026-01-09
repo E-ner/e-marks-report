@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>King College - E-marks System</title>
+    <link rel="stylesheet" href="../css/output.css" />
+  </head>
+
+  <body class="m-0 min-h-screen w-full bg-fixed bg-image2 bg-cover p-0">
+    <!-- Navigation -->
+    <div
+      class="w-full px-4 md:px-10 bg-red-400 text-stone-100 flex justify-between items-center h-16"
+    >
+      <div class="flex items-center gap-x-3">
+        <div class="h-10 w-10 text-black">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-full"
+            viewBox="0 0 24 24"
+            role="img"
+            aria-label="Graduation Cap"
+          >
+            <title>Graduation Cap</title>
+            <path
+              fill="currentColor"
+              d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm4 12.27l-4 2.18-4-2.18V14l4 2.18L16 14v1.27z"
+            />
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-bold text-2xl tracking-tighter">King College</h1>
+          <p class="text-xs -mt-1 opacity-80">SINCE 1890</p>
+        </div>
+      </div>
+
+      <div
+        class="hidden lg:flex font-bold items-center gap-x-10 tracking-tight"
+      >
+        <a href="Home.html" class="underline decoration-red-400 decoration-2"
+          >Home</a
+        >
+        <a
+          href="Features.html"
+          class="hover:underline hover:decoration-red-400 hover:decoration-2"
+          >E-marks System</a
+        >
+        <a
+          href="login.html"
+          class="hover:underline hover:decoration-red-400 hover:decoration-2"
+          >Portal Login</a
+        >
+      </div>
+
+      <button class="lg:hidden text-2xl">&#9776;</button>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="grid w-full">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="w-full h-full object-cover col-start-1 row-start-1"
+      >
+        <source src="../images/vid1.webm" type="video/webm" />
+        <source src="../images/vid1.mp4" type="video/mp4" />
+      </video>
+
+      <div class="row-start-1 col-start-1 w-full h-full bg-zinc-800/60"></div>
+
+      <div class="row-start-1 col-start-1 z-10">
+        <div class="w-full h-full bg-zinc-800/60 pb-44">
+          <div
+            class="second-nav max-lg:pt-10 text-gray-200 gap-y-2 flex flex-col max-lg:px-3 max-lg:items-start items-center"
+          >
+            <div
+              class="logo flex flex-row-reverse items-center max-lg:hidden h-full gap-x-3 mt-6"
+            >
+              <div class="header">
+                <h1 class="font-bold text-2xl tracking-tighter">
+                  King College
+                </h1>
+                <p>SINCE 1890</p>
+              </div>
+              <div class="h-[6vw] w-[6vw]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-full h-full"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  aria-label="Graduation Cap"
+                >
+                  <title>Graduation Cap</title>
+                  <path
+                    fill="currentColor"
+                    d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm4 12.27l-4 2.18-4-2.18V14l4 2.18L16 14v1.27z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div
+              class="links font-bold flex items-center max-lg:hidden gap-x-24 tracking-tight"
+            >
+              <a
+                href="Home.html"
+                class="underline underline-offset-8 decoration-red-400 decoration-2"
+                >Home</a
+              >
+              <a
+                href="Features.html"
+                class="hover:underline-offset-8 duration-300 hover:underline hover:decoration-red-400 hover:decoration-2"
+                >E-marks System</a
+              >
+              <a
+                href="login.html"
+                class="hover:underline-offset-8 duration-300 hover:underline hover:decoration-red-400 hover:decoration-2"
+                >Portal Login</a
+              >
+            </div>
+
+            <div class="flex flex-col gap-y-5 items-start lg:items-center">
+              <h1
+                class="text-6xl md:text-7xl uppercase font-extrabold mt-24 max-lg:mt-5"
+              >
+                Student Results Management
+              </h1>
+              <p class="text-3xl lg:text-center">
+                Track, Manage, and Analyze Academic Performance
+              </p>
+            </div>
+
+            <div class="hero section button mt-16">
+              <a
+                href="login.html"
+                class="px-5 py-3 bg-red-400 duration-300 text-xl font-bold hover:bg-zinc-800 hover:text-white cursor-pointer inline-block"
+              >
+                Access Portal
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About E-marks System -->
+    <div
+      class="about-us p-2 gap-x-20 lg:py-32 lg:px-10 grid max-xl:gap-y-10 grid-cols-1 md:grid-cols-2 bg-white"
+    >
+      <div
+        class="bg-image4 bg-cover bg-no-repeat w-auto h-full max-xl:h-[60vh]"
+      ></div>
+
+      <div class="flex flex-col gap-y-4 xl:gap-y-10">
+        <div class="tracking-tighter leading-relaxed">
+          <h1 class="text-4xl text-zinc-950 font-bold">
+            King College E-marks System
+          </h1>
+        </div>
+
+        <div>
+          <p class="tracking-tight text-zinc-700">
+            Our comprehensive student result management system provides
+            real-time tracking of academic performance, automated grade
+            calculations, and detailed performance analytics for students,
+            teachers, and administrators.
+          </p>
+        </div>
+
+        <div>
+          <p class="tracking-tight text-zinc-700">
+            The E-marks system streamlines the entire grading process, from mark
+            entry to report generation. With advanced features like automatic
+            grade calculation, performance trends, and comparative analysis,
+            managing student results has never been easier.
+          </p>
+        </div>
+
+        <div class="button">
+          <a
+            href="Academics.html"
+            class="px-5 py-3 duration-300 text-white bg-red-400 text-xl font-bold hover:bg-zinc-800 hover:text-white cursor-pointer inline-block"
+          >
+            Explore Features
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div
+      class="bg-red-400 flex flex-col gap-y-16 max-sm:items-start max-sm:px-2 items-center pt-20 pb-16"
+    >
+      <div class="tracking-tighter leading-relaxed">
+        <h1 class="text-4xl text-white font-bold">Key Features</h1>
+      </div>
+
+      <div class="flex max-sm:flex-col max-sm:gap-x-0 max-sm:gap-y-4 gap-x-6">
+        <a
+          href="Academics.html"
+          class="px-8 py-4 duration-300 bg-white text-black text-xl font-bold hover:bg-zinc-700 hover:text-white cursor-pointer"
+        >
+          Grade Management
+        </a>
+        <a
+          href="Academics.html"
+          class="px-8 py-4 duration-300 bg-white text-black text-xl font-bold hover:bg-zinc-700 hover:text-white cursor-pointer"
+        >
+          Performance Analytics
+        </a>
+        <a
+          href="login.html"
+          class="px-8 py-4 duration-300 bg-white text-black text-xl font-bold hover:bg-zinc-700 hover:text-white cursor-pointer"
+        >
+          Access Portal
+        </a>
+      </div>
+    </div>
+
+    <!-- System Statistics -->
+    <div class="flex flex-col gap-y-16 bg-white py-32">
+      <div
+        class="tracking-tighter max-sm:gap-y-4 px-10 flex max-sm:flex-col md:justify-between leading-relaxed"
+      >
+        <h1 class="text-4xl text-zinc-900 font-bold">System Capabilities</h1>
+      </div>
+
+      <div
+        class="stories-section p-2 xl:px-10 gap-x-16 grid max-xl:gap-y-10 grid-cols-1 md:grid-cols-2 bg-white"
+      >
+        <div
+          class="bg-image5 bg-cover bg-no-repeat w-auto h-full max-xl:h-[60vh]"
+        ></div>
+
+        <div class="flex flex-col gap-y-24">
+          <div class="flex gap-x-7">
+            <div class="tracking-tighter leading-relaxed">
+              <h1 class="text-5xl text-red-400 font-bold">01</h1>
+            </div>
+
+            <div class="flex flex-col gap-y-3">
+              <div class="tracking-tighter leading-relaxed">
+                <h1 class="text-3xl text-zinc-700 font-semibold">
+                  Automated Grade Calculation
+                </h1>
+              </div>
+              <div>
+                <p class="text-gray-600">
+                  Automatically calculate totals, averages, and assign grades
+                  based on configurable grading scales. Supports multiple
+                  subjects and custom weighting.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-x-7">
+            <div class="tracking-tighter leading-relaxed">
+              <h1 class="text-5xl text-red-400 font-bold">02</h1>
+            </div>
+
+            <div class="flex flex-col gap-y-3">
+              <div class="tracking-tighter leading-relaxed">
+                <h1 class="text-3xl text-zinc-700 font-semibold">
+                  Real-time Performance Tracking
+                </h1>
+              </div>
+              <div>
+                <p class="text-gray-600">
+                  Track student performance in real-time with comprehensive
+                  dashboards showing trends, comparisons, and detailed analytics
+                  across all subjects.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-x-7">
+            <div class="tracking-tighter leading-relaxed">
+              <h1 class="text-5xl text-red-400 font-bold">03</h1>
+            </div>
+
+            <div class="flex flex-col gap-y-3">
+              <div class="tracking-tighter leading-relaxed">
+                <h1 class="text-3xl text-zinc-700 font-semibold">
+                  Comprehensive Reporting
+                </h1>
+              </div>
+              <div>
+                <p class="text-gray-600">
+                  Generate detailed reports with visual representations,
+                  progress bars, and grade distributions. Export data for
+                  further analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How It Works -->
+    <div
+      class="bg-zinc-800/70 p-2 py-8 xl:py-20 grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-20 items-center"
+    >
+      <div class="xl:px-10 flex flex-col gap-y-5 leading-relaxed">
+        <h1 class="tracking-tighter text-6xl text-white font-bold">
+          Simple &
+          <span class="underline underline-offset-1">Powerful</span> Grade
+          Management
+        </h1>
+
+        <h1 class="text-xl text-white">Designed for efficiency and accuracy</h1>
+      </div>
+
+      <div class="buttons flex flex-col gap-y-5 xl:px-32">
+        <div class="px-5 py-4 bg-white text-black rounded">
+          <h3 class="font-bold text-lg mb-2">Enter Marks</h3>
+          <p class="text-sm text-gray-700">
+            Add student marks for multiple subjects with built-in validation
+          </p>
+        </div>
+        <div class="px-5 py-4 bg-white text-black rounded">
+          <h3 class="font-bold text-lg mb-2">Auto Calculate</h3>
+          <p class="text-sm text-gray-700">
+            System automatically computes totals, averages, and assigns grades
+          </p>
+        </div>
+        <div class="px-5 py-4 bg-white text-black rounded">
+          <h3 class="font-bold text-lg mb-2">Track & Analyze</h3>
+          <p class="text-sm text-gray-700">
+            Monitor performance trends and generate comprehensive reports
+          </p>
+        </div>
+        <a
+          href="login.html"
+          class="px-5 py-3 duration-300 text-white bg-red-400 text-xl font-bold hover:bg-white hover:text-red-400 cursor-pointer text-center"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+
+    <!-- System Benefits -->
+    <div class="bg-white p-2 xl:py-20">
+      <div class="flex flex-col gap-y-16">
+        <div
+          class="tracking-tighter px-10 flex max-sm:flex-col max-sm:gap-y-8 sm:justify-between leading-relaxed"
+        >
+          <h1 class="text-4xl text-zinc-900 font-bold">Benefits of E-marks</h1>
+        </div>
+
+        <div
+          class="grid grid-cols-1 gap-y-6 lg:grid-cols-2 xl:grid-cols-4 md:px-10 gap-x-6"
+        >
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div
+              class="w-16 h-16 bg-red-400 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Accuracy</h3>
+            <p class="text-gray-600">
+              Eliminate calculation errors with automated grade computation
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div
+              class="w-16 h-16 bg-red-400 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Speed</h3>
+            <p class="text-gray-600">
+              Process results faster and generate reports instantly
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div
+              class="w-16 h-16 bg-red-400 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Analytics</h3>
+            <p class="text-gray-600">
+              Gain insights into student performance patterns and trends
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div
+              class="w-16 h-16 bg-red-400 rounded-lg flex items-center justify-center mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Security</h3>
+            <p class="text-gray-600">
+              Keep student data secure with controlled access levels
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-red-400 py-20 px-10 text-center">
+      <h2 class="text-4xl font-bold text-white mb-4">
+        Ready to Transform Grade Management?
+      </h2>
+      <p class="text-white text-xl mb-8">
+        Join King College in modernizing academic result tracking
+      </p>
+      <a
+        href="login.html"
+        class="px-8 py-4 bg-white text-red-400 font-bold text-lg hover:bg-zinc-800 hover:text-white duration-300 inline-block"
+      >
+        Access E-marks Portal
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-image3 bg-cover">
+      <div
+        class="w-full h-full flex gap-x-60 flex-col-reverse gap-y-20 lg:flex-row bg-zinc-900/95 py-6 px-3 md:py-20 md:px-10"
+      >
+        <div class="flex flex-col gap-y-20 text-zinc-300">
+          <div class="logo flex flex-col-reverse h-full gap-x-3">
+            <div class="header">
+              <h1 class="font-bold text-4xl tracking-tighter">King College</h1>
+            </div>
+            <div
+              class="h-[6vw] w-[6vw] max-md:h-[20vw] max-md:w-[20vw] text-red-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-full h-full"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-label="Graduation Cap"
+              >
+                <title>Graduation Cap</title>
+                <path
+                  fill="currentColor"
+                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm4 12.27l-4 2.18-4-2.18V14l4 2.18L16 14v1.27z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div>
+            <h1>© 2021 King College. All Rights Reserved</h1>
+          </div>
+        </div>
+
+        <div class="flex max-sm:flex-col gap-y-10 gap-x-20">
+          <div>
+            <h1 class="text-zinc-200 font-semibold tracking-tighter text-xl">
+              Get in touch
+            </h1>
+            <a
+              href="https://wa.me/0798019397"
+              class="text-white font-bold text-2xl"
+              target="_blank"
+              >0798019397</a
+            >
+          </div>
+
+          <div class="flex flex-col gap-y-4">
+            <h1 class="text-zinc-200 font-semibold tracking-tighter text-xl">
+              Quick Links
+            </h1>
+            <a
+              href="Home.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >Home</a
+            >
+            <a
+              href="Features.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >E-marks System</a
+            >
+            <a
+              href="login.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >Portal Login</a
+            >
+          </div>
+
+          <div class="flex flex-col gap-y-4 sm:pl-10">
+            <h1 class="text-zinc-200 font-semibold tracking-tighter text-xl">
+              System
+            </h1>
+            <a
+              href="Features.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >Features</a
+            >
+            <a class="text-zinc-400 hover:text-white duration-300"
+              >Grade Management</a
+            >
+            <a class="text-zinc-400 hover:text-white duration-300">Analytics</a>
+            <a
+              href="login.html"
+              class="text-zinc-400 hover:text-white duration-300"
+              >Access Portal</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

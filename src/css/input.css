@@ -1,18 +1,57 @@
 @import "tailwindcss";
 
+.bg-image1 {
+  background-image: url("../images/image1.jpg");
+}
+.bg-image2 {
+  background-image: url("../images/image2.jpg");
+}
+.bg-image3 {
+  background-image: url("../images/image3.jpg");
+}
+.bg-image4 {
+  background-image: url("../images/image5.jpg");
+}
+.bg-video1 {
+  background-image: url("../images/vid1.webm");
+}
+
+.bg-image5 {
+  background-image: url("../images/image15.jpg");
+}
+
+.bg-image6 {
+  background-image: url("../images/image21.jpg");
+}
+.bg-image7 {
+  background-image: url("../images/image20.jpg");
+}
+.bg-image8 {
+  background-image: url("../images/image19.jpg");
+}
+.bg-image9 {
+  background-image: url("../images/image18.jpg");
+}
+.bg-image10 {
+  background-image: url("../images/image16.jpg");
+}
+.bg-image11 {
+  background-image: url("../images/image22.jpg");
+}
+
 .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #374151;
-    border-radius: 3px;
+  background: #374151;
+  border-radius: 3px;
 }
 
 .sidebar-transition {
-    transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }

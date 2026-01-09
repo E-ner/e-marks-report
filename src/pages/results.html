@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Results | E-marks</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .row-animate {
+        animation: slideIn 0.5s ease-out;
+      }
+
+      .progress-bar {
+        transition: width 1s ease-out;
+      }
+
+      .grade-A {
+        background: #dcfce7;
+        color: #166534;
+      }
+      .grade-B {
+        background: #dbeafe;
+        color: #1e40af;
+      }
+      .grade-C {
+        background: #fef3c7;
+        color: #a16207;
+      }
+      .grade-D {
+        background: #fed7aa;
+        color: #c2410c;
+      }
+      .grade-F {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        animation: fadeIn 0.3s;
+      }
+
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-content {
+        animation: slideUp 0.3s;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .error-input {
+        border-color: #ef4444 !important;
+      }
+
+      .error-message {
+        color: #ef4444;
+        font-size: 0.75rem;
+        margin-top: 0.25rem;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased font-sans flex bg-gray-100 overflow-x-hidden">
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden transition-opacity"
+    ></div>
+
+    <div
+      id="sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-72 bg-zinc-900 py-3 px-3 flex flex-col gap-y-8 h-screen transition-transform duration-300 transform -translate-x-full lg:translate-x-0 lg:static lg:inset-0"
+    >
+      <div class="flex gap-x-2 px-5 py-5 items-center text-white">
+        <div
+          class="bg-red-400 p-1.5 rounded-lg flex items-center justify-center"
+        >
+          <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight text-white">
+            King College
+          </h1>
+          <p class="text-xs text-gray-400">E-marks System</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col px-5 gap-y-8 overflow-y-auto">
+        <section class="flex flex-col gap-y-4">
+          <h1
+            class="uppercase text-gray-500 font-bold tracking-widest text-[10px]"
+          >
+            Portal
+          </h1>
+          <nav class="flex flex-col gap-y-2">
+            <a
+              href="index.html"
+              class="flex hover:font-bold gap-x-2 items-center text-gray-400 px-2.5 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="home" class="w-4 h-4"></i>
+              <p class="text-sm">Dashboard</p>
+            </a>
+            <a
+              href="results.html"
+              class="flex gap-x-2 items-center px-2.5 py-2.5 rounded-xl bg-red-400/10 text-red-400 font-bold transition-colors"
+            >
+              <i data-lucide="award" class="w-4 h-4"></i>
+              <p class="text-sm">Student Results</p>
+            </a>
+          </nav>
+        </section>
+
+        <section class="flex flex-col gap-y-4">
+          <h1
+            class="uppercase text-gray-500 font-bold tracking-widest text-[10px]"
+          >
+            Website
+          </h1>
+          <nav class="flex flex-col gap-y-2">
+            <a
+              href="Home.html"
+              class="flex hover:font-bold gap-x-3 items-center text-gray-400 px-3 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="globe" class="w-4 h-4"></i>
+              <p class="text-sm">Home</p>
+            </a>
+            <a
+              href="Features.html"
+              class="flex hover:font-bold gap-x-3 items-center text-gray-400 px-3 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <p class="text-sm">Features</p>
+            </a>
+          </nav>
+        </section>
+
+        <a
+          href="login.html"
+          class="flex hover:font-bold gap-x-3 items-center text-red-400/60 px-3 py-2.5 rounded-xl hover:bg-red-400/10 hover:text-red-400 transition-all mt-auto"
+        >
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          <p class="text-sm">Logout</p>
+        </a>
+      </div>
+    </div>
+
+    <main class="flex-1 min-w-0 h-screen overflow-y-auto">
+      <header
+        class="h-20 bg-white border-b border-gray-200 flex items-center justify-between px-6 lg:px-8 sticky top-0 z-30"
+      >
+        <div class="flex items-center gap-4 flex-1">
+          <button
+            id="sidebar-toggle"
+            class="lg:hidden p-2 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors"
+          >
+            <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+          </button>
+          <div class="relative w-full max-w-md hidden sm:block">
+            <i
+              data-lucide="search"
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+            ></i>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search students by name or reg number..."
+              class="w-full border border-gray-300 rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none transition-all"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 lg:gap-5">
+          <button
+            class="p-2.5 bg-gray-100 text-gray-600 rounded-lg hover:bg-red-400 hover:text-white transition-all relative"
+          >
+            <i data-lucide="bell" class="w-5 h-5"></i>
+            <span
+              class="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"
+            ></span>
+          </button>
+          <div class="flex items-center gap-3 pl-4 border-l border-gray-200">
+            <div class="text-right hidden md:block">
+              <p class="text-sm font-bold leading-none text-slate-800">
+                Admin User
+              </p>
+              <p
+                class="text-[10px] text-gray-500 font-semibold mt-1 tracking-wider uppercase"
+              >
+                Director
+              </p>
+            </div>
+            <button
+              class="w-10 h-10 rounded-full bg-red-400 text-white flex items-center justify-center font-bold"
+            >
+              AU
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-6 lg:p-8 space-y-8">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div class="flex justify-between items-start mb-4">
+              <div class="bg-red-50 p-2.5 rounded-lg text-red-400">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="text-3xl font-bold text-slate-800" id="totalStudents">
+              0
+            </h3>
+            <p
+              class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1"
+            >
+              Total Students
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div class="flex justify-between items-start mb-4">
+              <div class="bg-green-50 p-2.5 rounded-lg text-green-600">
+                <i data-lucide="trending-up" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="text-3xl font-bold text-slate-800" id="averageScore">
+              0
+            </h3>
+            <p
+              class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1"
+            >
+              Average Score
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div class="flex justify-between items-start mb-4">
+              <div class="bg-purple-50 p-2.5 rounded-lg text-purple-600">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800" id="topPerformer">
+              -
+            </h3>
+            <p
+              class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1"
+            >
+              Top Performer
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <div class="flex justify-between items-start mb-4">
+              <div class="bg-orange-50 p-2.5 rounded-lg text-orange-600">
+                <i data-lucide="target" class="w-5 h-5"></i>
+              </div>
+            </div>
+            <h3 class="text-3xl font-bold text-slate-800" id="passRate">0%</h3>
+            <p
+              class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1"
+            >
+              Pass Rate
+            </p>
+          </div>
+        </div>
+
+        <!-- Results Table -->
+        <div
+          class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div
+            class="p-6 border-b border-gray-100 flex items-center justify-between flex-wrap gap-4"
+          >
+            <div>
+              <h2 class="font-bold text-slate-800 text-2xl tracking-tight">
+                Student Results
+              </h2>
+              <p class="text-sm text-gray-500 mt-1">
+                Manage and view all student academic performance
+              </p>
+            </div>
+
+            <div class="flex items-center gap-3 flex-wrap">
+              <select
+                id="sortSelect"
+                class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm font-medium focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none"
+              >
+                <option value="name">Sort by Name</option>
+                <option value="average">Sort by Average</option>
+                <option value="total">Sort by Total</option>
+              </select>
+
+              <button
+                onclick="openAddModal()"
+                class="flex items-center gap-2 bg-red-400 hover:bg-red-500 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all"
+              >
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                <span>Add Student</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead class="bg-gray-50 border-b border-gray-200">
+                <tr>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Name
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Reg Number
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Math
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    English
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Science
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    History
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Physics
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Total
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Average
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Grade
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Progress
+                  </th>
+                  <th
+                    class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="resultsTable" class="divide-y divide-gray-100 text-sm">
+                <!-- Results will be populated here -->
+              </tbody>
+            </table>
+          </div>
+
+          <div id="noResults" class="hidden p-12 text-center">
+            <div class="text-gray-400 mb-3">
+              <i data-lucide="inbox" class="w-16 h-16 mx-auto mb-3"></i>
+            </div>
+            <p class="text-gray-700 font-semibold text-lg">No students found</p>
+            <p class="text-gray-500 text-sm mt-1">
+              Add a student to get started with result management
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Add Student Modal -->
+    <div id="addModal" class="modal">
+      <div
+        class="modal-content bg-white rounded-lg p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto shadow-2xl"
+      >
+        <div
+          class="flex justify-between items-center mb-6 pb-4 border-b border-gray-200"
+        >
+          <div>
+            <h2 class="text-2xl font-bold text-slate-800 tracking-tight">
+              Add New Student
+            </h2>
+            <p class="text-sm text-gray-500 mt-1">
+              Enter student details and subject marks
+            </p>
+          </div>
+          <button
+            onclick="closeAddModal()"
+            class="text-gray-400 hover:text-gray-600 p-2 hover:bg-gray-100 rounded-lg transition-all"
+          >
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+        <form id="addStudentForm" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label
+                class="text-xs font-bold text-gray-600 uppercase tracking-wider ml-1"
+                >Student Name</label
+              >
+              <input
+                type="text"
+                id="studentName"
+                placeholder="Enter full name"
+                class="w-full border border-gray-300 rounded-lg py-3 px-4 text-slate-700 placeholder:text-gray-400 focus:ring-2 focus:ring-red-400/20 focus:border-red-400 outline-none transition-all text-sm mt-2"
+              />
+              <div id="nameError" class="error-message"></div>
+            </div>
+
+            <div>
+              <label
+                class="text-xs font-bold text-gray-600 uppercase tracking-wider ml-1"
+                >Registration Number</label
+              >
+              <input
+                type="text"
+                id="regNumber"
+                placeholder="e.g. REG-2024-001"
+                class="w-full border border-gray-300 rounded-lg py-3 px-4 text-slate-700 placeholder:text-gray-400 focus:ring-2 focus:ring-red-400/20 focus:border-red-400 outline-none transition-all text-sm mt-2"
+              />
+              <div id="regNumberError" class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-200 pt-6">
+            <h3
+              class="text-sm font-bold text-gray-700 uppercase tracking-wider mb-4"
+            >
+              Subject Marks (0-100)
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs font-semibold text-gray-600"
+                  >Mathematics</label
+                >
+                <input
+                  type="number"
+                  id="math"
+                  min="0"
+                  max="100"
+                  placeholder="0-100"
+                  class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none mt-1"
+                />
+                <div id="mathError" class="error-message"></div>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold text-gray-600"
+                  >English</label
+                >
+                <input
+                  type="number"
+                  id="english"
+                  min="0"
+                  max="100"
+                  placeholder="0-100"
+                  class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none mt-1"
+                />
+                <div id="englishError" class="error-message"></div>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold text-gray-600"
+                  >Science</label
+                >
+                <input
+                  type="number"
+                  id="science"
+                  min="0"
+                  max="100"
+                  placeholder="0-100"
+                  class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none mt-1"
+                />
+                <div id="scienceError" class="error-message"></div>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold text-gray-600"
+                  >History</label
+                >
+                <input
+                  type="number"
+                  id="history"
+                  min="0"
+                  max="100"
+                  placeholder="0-100"
+                  class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none mt-1"
+                />
+                <div id="historyError" class="error-message"></div>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold text-gray-600"
+                  >Physics</label
+                >
+                <input
+                  type="number"
+                  id="physics"
+                  min="0"
+                  max="100"
+                  placeholder="0-100"
+                  class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none mt-1"
+                />
+                <div id="physicsError" class="error-message"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-4 pt-4">
+            <button
+              type="button"
+              onclick="closeAddModal()"
+              class="flex-1 px-6 py-3 border-2 border-gray-300 rounded-lg text-gray-700 font-bold hover:bg-gray-50 transition-all"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="flex-1 px-6 py-3 bg-red-400 hover:bg-red-500 text-white rounded-lg font-bold transition-all"
+            >
+              Add Student
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../scripts/results.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
