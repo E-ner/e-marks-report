@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/output.css" rel="stylesheet">
+    <title>Class session with student result</title>
+</head>
+<body class="bg-gray-500 min-h-screen p-8 font-sans">
+
+    <div class="max-w-5xl mx-auto bg-white/90 backdrop-blur-md rounded-xl shadow-2xl p-8 dashboard">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b pb-4">Class Session</h2>
+        
+        <div class="flex flex-wrap gap-4 mb-8 items-center justify-between controls">
+            <input type="text" id="searchInput" 
+                class="flex-1 min-w-[300px] px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
+                placeholder="Search by Class..." onkeyup="app.handleSearch()">
+            
+            <div class="flex gap-2">
+                <button onclick="app.sortSessions('className')" 
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all text-sm font-medium shadow-md">
+                    Sort by Class
+                </button>
+               
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10 p-6 bg-gray-100 rounded-xl form-container">
+            <input type="text" id="className" 
+                class="px-4 py-2 rounded-md border border-gray-300 focus:border-blue-500 outline-none" 
+                placeholder="Class Name (e.g. Math & science)">
+            <button onclick="app.handleCreate()" 
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-colors shadow-lg">
+                + Create New Class 
+            </button>
+        </div>
+
+        <div class="overflow-x-auto rounded-lg border border-gray-200">
+            <table id="sessionTable" class="w-full text-left bg-white">
+                <thead class="bg-gray-500 text-white">
+                    <tr>
+                        <th class="px-6 py-4 font-semibold uppercase text-sm">Class Name</th>
+                        <th class="px-6 py-4 font-semibold uppercase text-sm text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" class="divide-y divide-gray-200 text-gray-700">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../scripts/class.js"></script>
+</body>
