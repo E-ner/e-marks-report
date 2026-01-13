@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes | E-marks</title>
+    <link rel="stylesheet" href="../css/output.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body class="antialiased font-sans flex bg-gray-100 overflow-x-hidden">
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden transition-opacity"
+    ></div>
+
+    <div
+      id="sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-72 bg-zinc-900 py-3 px-3 flex flex-col gap-y-8 h-screen transition-transform duration-300 transform -translate-x-full lg:translate-x-0 lg:static lg:inset-0"
+    >
+      <div class="flex gap-x-2 px-5 py-5 items-center text-white">
+        <div
+          class="bg-red-400 p-1.5 rounded-lg flex items-center justify-center"
+        >
+          <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight text-white">E-Marks</h1>
+          <p class="text-xs text-gray-400">E-marks System</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col px-5 gap-y-8 overflow-y-auto">
+        <section class="flex flex-col gap-y-4">
+          <h1
+            class="uppercase text-gray-500 font-bold tracking-widest text-[10px]"
+          >
+            Portal
+          </h1>
+          <nav class="flex flex-col gap-y-2">
+            <a
+              href="index.html"
+              class="flex hover:font-bold gap-x-2 items-center text-gray-400 px-2.5 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="home" class="w-4 h-4"></i>
+              <p class="text-sm">Dashboard</p>
+            </a>
+            <a
+              href="results.html"
+              class="flex hover:font-bold gap-x-2 items-center text-gray-400 px-2.5 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="award" class="w-4 h-4"></i>
+              <p class="text-sm">Student Results</p>
+            </a>
+            <a
+              href="Classes.html"
+              class="flex gap-x-2 items-center px-2.5 py-2.5 rounded-xl bg-red-400/10 text-red-400 font-bold transition-colors"
+            >
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <p class="text-sm">Classes</p>
+            </a>
+            <a
+              href="Teachers.html"
+              class="flex hover:font-bold gap-x-2 items-center text-gray-400 px-2.5 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="user-check" class="w-4 h-4"></i>
+              <p class="text-sm">Teachers</p>
+            </a>
+            <a
+              href="Subjects.html"
+              class="flex hover:font-bold gap-x-2 items-center text-gray-400 px-2.5 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <p class="text-sm">Subjects</p>
+            </a>
+          </nav>
+        </section>
+
+        <section class="flex flex-col gap-y-4">
+          <h1
+            class="uppercase text-gray-500 font-bold tracking-widest text-[10px]"
+          >
+            Website
+          </h1>
+          <nav class="flex flex-col gap-y-2">
+            <a
+              href="Home.html"
+              class="flex hover:font-bold gap-x-3 items-center text-gray-400 px-3 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="globe" class="w-4 h-4"></i>
+              <p class="text-sm">Home</p>
+            </a>
+            <a
+              href="Features.html"
+              class="flex hover:font-bold gap-x-3 items-center text-gray-400 px-3 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <p class="text-sm">Features</p>
+            </a>
+          </nav>
+        </section>
+
+        <a
+          href="login.html"
+          class="flex hover:font-bold gap-x-3 items-center text-red-400/60 px-3 py-2.5 rounded-xl hover:bg-red-400/10 hover:text-red-400 transition-all mt-auto"
+        >
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          <p class="text-sm">Logout</p>
+        </a>
+      </div>
+    </div>
+
+    <main class="flex-1 min-w-0 h-screen overflow-y-auto">
+      <header
+        class="h-20 bg-white border-b border-gray-200 flex items-center justify-between px-6 lg:px-8 sticky top-0 z-30"
+      >
+        <div class="flex items-center gap-4 flex-1">
+          <button
+            id="sidebar-toggle"
+            class="lg:hidden p-2 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors"
+          >
+            <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+          </button>
+          <div class="relative w-full max-w-md hidden sm:block">
+            <i
+              data-lucide="search"
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+            ></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search classes by name or grade..."
+              class="w-full border border-gray-300 rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none transition-all"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 lg:gap-5">
+          <button
+            class="p-2.5 bg-gray-100 text-gray-600 rounded-lg hover:bg-red-400 hover:text-white transition-all relative"
+          >
+            <i data-lucide="bell" class="w-5 h-5"></i>
+            <span
+              class="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"
+            ></span>
+          </button>
+          <div class="flex items-center gap-3 pl-4 border-l border-gray-200">
+            <div class="text-right hidden md:block">
+              <p class="text-sm font-bold leading-none text-slate-800">
+                Admin User
+              </p>
+              <p
+                class="text-[10px] text-gray-500 font-semibold mt-1 tracking-wider uppercase"
+              >
+                Director
+              </p>
+            </div>
+            <button
+              class="w-10 h-10 rounded-full bg-red-400 text-white flex items-center justify-center font-bold"
+            >
+              AU
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-6 lg:p-8 space-y-6">
+        <div
+          class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
+        >
+          <div>
+            <h1 class="text-3xl font-bold text-slate-800 tracking-tight">
+              Classes Management
+            </h1>
+            <p class="text-sm text-gray-500 mt-1">
+              Manage all classes and student groups
+            </p>
+          </div>
+          <button
+            id="add-class-btn"
+            class="bg-red-400 hover:bg-red-500 text-white px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-wide transition-all flex items-center gap-2"
+          >
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            Add Class
+          </button>
+        </div>
+
+        <!-- Table View -->
+        <div
+          class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50 border-b border-gray-200">
+                <tr>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                  >
+                    Class Name
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                  >
+                    Grade Level
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                  >
+                    Class Teacher
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                  >
+                    Students
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                  >
+                    Room
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider"
+                  >
+                    Academic Year
+                  </th>
+                  <th
+                    class="px-6 py-4 text-center text-xs font-bold text-gray-700 uppercase tracking-wider"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="classes-table-body" class="divide-y divide-gray-200">
+                <!-- Table rows will be inserted here -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty State -->
+          <div id="empty-state" class="hidden py-12 text-center">
+            <i
+              data-lucide="inbox"
+              class="w-12 h-12 text-gray-300 mx-auto mb-3"
+            ></i>
+            <p class="text-gray-500 text-sm">No classes found</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Add/Edit Class Modal -->
+    <div
+      id="class-modal"
+      class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-white rounded-lg w-full max-w-lg max-h-[90vh] overflow-y-auto"
+      >
+        <div
+          class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white"
+        >
+          <h2 class="text-xl font-bold text-slate-800" id="modal-title">
+            Add New Class
+          </h2>
+          <button id="close-modal" class="text-gray-400 hover:text-gray-600">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2"
+              >Class Name</label
+            >
+            <input
+              type="text"
+              id="class-name"
+              class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none"
+              placeholder="Senior 1 A"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2"
+              >Grade Level</label
+            >
+            <select
+              id="class-grade"
+              class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none"
+            >
+              <option value="Senior 1">Senior 1</option>
+              <option value="Senior 2">Senior 2</option>
+              <option value="Senior 3">Senior 3</option>
+              <option value="Senior 4">Senior 4</option>
+              <option value="Senior 5">Senior 5</option>
+              <option value="Senior 6">Senior 6</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2"
+              >Class Teacher</label
+            >
+            <input
+              type="text"
+              id="class-teacher"
+              class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none"
+              placeholder="Mr. John Doe"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2"
+              >Number of Students</label
+            >
+            <input
+              type="number"
+              id="class-students"
+              class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none"
+              placeholder="30"
+              min="0"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2"
+              >Room Number</label
+            >
+            <input
+              type="text"
+              id="class-room"
+              class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none"
+              placeholder="Room 101"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-gray-700 mb-2"
+              >Academic Year</label
+            >
+            <input
+              type="text"
+              id="class-year"
+              class="w-full border border-gray-300 rounded-lg py-2.5 px-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none"
+              placeholder="2024-2025"
+            />
+          </div>
+          <div class="flex gap-3 pt-4">
+            <button
+              id="save-class"
+              class="flex-1 bg-red-400 hover:bg-red-500 text-white py-3 rounded-lg text-sm font-bold uppercase tracking-wide transition-all"
+            >
+              Save Class
+            </button>
+            <button
+              id="cancel-modal"
+              class="px-6 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-lg text-sm font-bold uppercase tracking-wide transition-all"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../scripts/classes.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

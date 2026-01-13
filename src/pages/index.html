@@ -25,9 +25,7 @@
           <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
         </div>
         <div>
-          <h1 class="text-xl font-bold tracking-tight text-white">
-            King College
-          </h1>
+          <h1 class="text-xl font-bold tracking-tight text-white">E-Marks</h1>
           <p class="text-xs text-gray-400">E-marks System</p>
         </div>
       </div>
@@ -41,7 +39,7 @@
           </h1>
           <nav class="flex flex-col gap-y-2">
             <a
-              href="page.html"
+              href="index.html"
               class="flex gap-x-2 items-center px-2.5 py-2.5 rounded-xl bg-red-400/10 text-red-400 font-bold transition-colors"
             >
               <i data-lucide="home" class="w-4 h-4"></i>
@@ -53,6 +51,29 @@
             >
               <i data-lucide="award" class="w-4 h-4"></i>
               <p class="text-sm">Student Results</p>
+            </a>
+
+            <a
+              href="Classes.html"
+              class="flex hover:font-bold gap-x-2 items-center text-gray-400 px-2.5 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <p class="text-sm">Classes</p>
+            </a>
+
+            <a
+              href="Teachers.html"
+              class="flex hover:font-bold gap-x-2 items-center text-gray-400 px-2.5 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="user-check" class="w-4 h-4"></i>
+              <p class="text-sm">Teachers</p>
+            </a>
+            <a
+              href="Subjects.html"
+              class="flex hover:font-bold gap-x-2 items-center text-gray-400 px-2.5 py-2.5 rounded-xl hover:bg-zinc-800 hover:text-slate-300 transition-all"
+            >
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <p class="text-sm">Subjects</p>
             </a>
           </nav>
         </section>
@@ -109,7 +130,8 @@
             ></i>
             <input
               type="text"
-              placeholder="Search students by Reg Number..."
+              id="search-input"
+              placeholder="Search students by name or reg number..."
               class="w-full border border-gray-300 rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none transition-all"
             />
           </div>
@@ -154,7 +176,9 @@
                 <i data-lucide="users" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="text-3xl font-bold text-slate-800">1,240</h3>
+            <h3 class="text-3xl font-bold text-slate-800" id="total-students">
+              0
+            </h3>
             <p
               class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1"
             >
@@ -168,7 +192,9 @@
                 <i data-lucide="graduation-cap" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="text-3xl font-bold text-slate-800">86</h3>
+            <h3 class="text-3xl font-bold text-slate-800" id="total-teachers">
+              0
+            </h3>
             <p
               class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1"
             >
@@ -182,7 +208,9 @@
                 <i data-lucide="school" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="text-3xl font-bold text-slate-800">24</h3>
+            <h3 class="text-3xl font-bold text-slate-800" id="total-classes">
+              0
+            </h3>
             <p
               class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1"
             >
@@ -196,7 +224,9 @@
                 <i data-lucide="book-open" class="w-5 h-5"></i>
               </div>
             </div>
-            <h3 class="text-3xl font-bold text-slate-800">12</h3>
+            <h3 class="text-3xl font-bold text-slate-800" id="total-subjects">
+              0
+            </h3>
             <p
               class="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1"
             >
@@ -217,16 +247,14 @@
                 <h2 class="font-bold text-slate-800 text-xl tracking-tight">
                   Recent Students
                 </h2>
-                <p class="text-sm text-gray-500 mt-1">
-                  Latest student enrollments
-                </p>
+                <p class="text-sm text-gray-500 mt-1">Latest student records</p>
               </div>
 
               <a
                 href="results.html"
                 class="flex items-center gap-2 text-red-400 hover:text-red-500 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-lg text-sm font-bold transition-all group"
               >
-                <span>View Results</span>
+                <span>View All Results</span>
                 <i
                   data-lucide="arrow-right"
                   class="w-4 h-4 transition-transform group-hover:translate-x-1"
@@ -252,7 +280,12 @@
                     <th
                       class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
                     >
-                      Class
+                      Average
+                    </th>
+                    <th
+                      class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
+                    >
+                      Grade
                     </th>
                     <th
                       class="px-6 py-4 text-[11px] font-bold text-gray-600 uppercase tracking-wider"
@@ -261,63 +294,21 @@
                     </th>
                   </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-100 text-sm">
-                  <tr class="hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 font-bold text-slate-700">
-                      Alice Smith
-                    </td>
-                    <td
-                      class="px-6 py-4 text-gray-600 font-medium tracking-tight"
-                    >
-                      REG-2024-001
-                    </td>
-                    <td class="px-6 py-4 text-gray-600">Senior 4A</td>
-                    <td class="px-6 py-4">
-                      <a
-                        href="results.html"
-                        class="text-red-400 font-bold hover:underline"
-                        >View Results</a
-                      >
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 font-bold text-slate-700">
-                      Bob Kevin
-                    </td>
-                    <td
-                      class="px-6 py-4 text-gray-600 font-medium tracking-tight"
-                    >
-                      REG-2024-042
-                    </td>
-                    <td class="px-6 py-4 text-gray-600">Senior 2B</td>
-                    <td class="px-6 py-4">
-                      <a
-                        href="results.html"
-                        class="text-red-400 font-bold hover:underline"
-                        >View Results</a
-                      >
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 font-bold text-slate-700">
-                      Charlie Brown
-                    </td>
-                    <td
-                      class="px-6 py-4 text-gray-600 font-medium tracking-tight"
-                    >
-                      REG-2024-103
-                    </td>
-                    <td class="px-6 py-4 text-gray-600">Senior 2B</td>
-                    <td class="px-6 py-4">
-                      <a
-                        href="results.html"
-                        class="text-red-400 font-bold hover:underline"
-                        >View Results</a
-                      >
-                    </td>
-                  </tr>
+                <tbody
+                  id="recent-students-table"
+                  class="divide-y divide-gray-100 text-sm"
+                >
+                  <!-- Recent students will be populated here -->
                 </tbody>
               </table>
+            </div>
+
+            <div id="no-students" class="hidden p-12 text-center">
+              <i
+                data-lucide="inbox"
+                class="w-12 h-12 text-gray-300 mx-auto mb-3"
+              ></i>
+              <p class="text-gray-500 text-sm">No students found</p>
             </div>
           </div>
 
@@ -336,10 +327,12 @@
                 Send announcement to teachers
               </p>
               <textarea
+                id="announcement-text"
                 placeholder="Type your announcement here..."
                 class="w-full h-32 bg-gray-50 border border-gray-200 rounded-lg text-sm p-4 focus:ring-2 focus:ring-red-400/20 focus:border-red-400 focus:outline-none mb-4 resize-none"
               ></textarea>
               <button
+                id="broadcast-btn"
                 class="w-full bg-red-400 hover:bg-red-500 text-white py-3 rounded-lg text-sm font-bold uppercase tracking-wide transition-all"
               >
                 Broadcast Message
